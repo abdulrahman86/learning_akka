@@ -1,11 +1,11 @@
 package chapter1
 
-import scala.concurrent.duration._
-
-import chapter1.AkkaDb.StoreObject
 import akka.actor.ActorSystem
 import akka.testkit.{ImplicitSender, TestActorRef, TestKit}
+import chapter1.AkkaDb.StoreObject
 import org.scalatest._
+
+import scala.concurrent.duration._
 
 class AkkaDbSpec extends TestKit(ActorSystem("test-system")) with ImplicitSender
   with FeatureSpecLike with GivenWhenThen with Matchers with BeforeAndAfterAll {
