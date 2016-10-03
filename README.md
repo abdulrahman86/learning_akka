@@ -7,6 +7,10 @@ This project is code from a study of the book
 ["Learning Akka" by Jason Goodwin](https://www.packtpub.com/application-development/learning-akka),
 published by Packt Publishing.
 
+## Chapter 3
+
+Ask pattern with actors
+
 ## Chapter 2
 
 The code in Chapter 2 was to build a Pong actor that would return Pong if you sent it a Ping message.
