@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.4.9-RC1",
   "com.typesafe.akka" %% "akka-testkit" % "2.4.9-RC1",
   "com.typesafe.akka" %% "akka-remote" % "2.4.9-RC1",
+  "com.syncthemall" % "boilerpipe" % "1.2.2",
   "org.scalatest" % "scalatest_2.11" % "3.0.0" % "test",
   specs2 % Test
 )
