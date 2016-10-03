@@ -1,6 +1,6 @@
 package chapter1
 
-import akka.actor.Actor
+import akka.actor.{Actor, ActorSystem, Props}
 
 import scala.collection.mutable
 
@@ -32,4 +32,10 @@ object AkkaDb {
 
   case class Result(k: String, v: Option[Object])
 
+}
+
+object Main extends  App {
+
+  val system = ActorSystem("akkadb")
+  system.actorOf(Props[AkkaDb], name="akkadb-instance")
 }
