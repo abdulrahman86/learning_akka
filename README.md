@@ -10,6 +10,7 @@ published by Packt Publishing.
 ## Chapter 3
 
 Ask pattern with actors
+Implemented Actor ask pattern using tell pattern
 
 ## Chapter 2
 
