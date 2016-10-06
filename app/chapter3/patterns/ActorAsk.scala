@@ -12,7 +12,7 @@ import scala.concurrent.{ExecutionContext, Future, Promise}
 /**
   * Created by asattar on 2016-10-05.
   */
-class ActorMessagePatterns (actor: ActorRef) {
+class ActorAsk(actor: ActorRef) {
 
   def ask(x: Any)(implicit system: ActorSystem, timeout: FiniteDuration, executionCtx: ExecutionContext): Future[Any] = {
 
@@ -45,15 +45,15 @@ class ActorMessagePatterns (actor: ActorRef) {
   def forwardMessage(x: Any)(implicit actorCtx: ActorContext) = actor.tell(x, actorCtx sender )
 }
 
-class FuturePipe(f: Future[Any]) {
+class ActorPipe(f: Future[Any]) {
   def pipe(actorRef: ActorRef)(implicit executionContext: ExecutionContext) = f onSuccess[Unit](PartialFunction[Any, Unit] (x => {
     actorRef ! x
   }))
 }
 
-object ActorMessagePatterns {
+object ActorAsk {
 
-  implicit val actorMessagePatternAdapter = (actorRef: ActorRef) => new ActorMessagePatterns(actorRef)
-  implicit val futurePipeAdapter = (f: Future[Any]) => new FuturePipe(f)
+  implicit val actorRefToActorActorAks =  (actorRef: ActorRef) => new ActorAsk(actorRef)
+  implicit val futureToActorPipe = (f: Future[Any]) => new ActorPipe(f)
 
 }

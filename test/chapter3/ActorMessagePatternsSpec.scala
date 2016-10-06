@@ -8,7 +8,7 @@ import akka.testkit.{ImplicitSender, TestActorRef, TestKit}
 import akka.util.Timeout
 import chapter3.ask.ServiceActor.{Get, Server}
 import org.scalatest.{BeforeAndAfterAll, FeatureSpecLike, GivenWhenThen, Matchers}
-import chapter3.patterns.ActorMessagePatterns._
+import chapter3.patterns.ActorAsk._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{Await, Future}
