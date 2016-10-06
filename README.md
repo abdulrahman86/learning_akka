@@ -13,6 +13,10 @@ Ask pattern with actors
 
 Implemented Actor ask pattern using tell pattern
 
+Forward pattern using tell pattern
+
+Pipe pattern using tell pattern
+
 ## Chapter 2
 
 The code in Chapter 2 was to build a Pong actor that would return Pong if you sent it a Ping message.

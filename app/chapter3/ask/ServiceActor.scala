@@ -3,7 +3,7 @@ package chapter3.ask
 import akka.actor.{Actor, ActorPath, ActorRef, Props, Status}
 import akka.actor.Actor.Receive
 
-import scala.concurrent.Await
+import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
 import akka.pattern.ask
 import akka.util.Timeout
