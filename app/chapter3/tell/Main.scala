@@ -3,11 +3,17 @@ package chapter3.tell
 import scala.collection.mutable.StringBuilder
 
 object Leet {
+
   trait Leetable[T] {
     def toLeet(in: T): String
+
+    def toLeet2(in: T): String
   }
-  def apply[T](in: T)(implicit leetable: Leetable[T]): String =
-    leetable.toLeet(in)
+
+  def apply[T](in: T)(implicit leetable: Leetable[T]): String = {
+    assert(leetable.toLeet(in) == leetable.toLeet2(in))
+    leetable.toLeet2(in)
+  }
 }
 
 object Main {
@@ -27,6 +33,18 @@ object Main {
           case y => x append y
         }
       }) toString
+
+      def toLeet2(in: String): String = in.reverse.toList.foldLeft[List[Char]](List())((x, y) => {
+        y match {
+          case 'A' | 'a' => '4' :: x
+          case 'E' | 'e' => '3' :: x
+          case 'i' | 'I' => '1' :: x
+          case 'o' | 'O' => '0' :: x
+          case 's' | 'S' => '5' :: x
+          case 't' | 'T' => '7' :: x
+          case y => y :: x
+        }
+      }) mkString
     }
 
     assert(Leet("Let's have some fun.") == "L37'5 h4v3 50m3 fun.")
@@ -36,4 +54,5 @@ object Main {
     println(Leet(args(0)))
   }
 }
+
 
